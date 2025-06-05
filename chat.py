@@ -4,6 +4,9 @@ import argparse
 import sys
 import time
 import pyfiglet
+from colorama import Fore, Style, init
+
+init(autoreset=True)
 
 class Chat:
     def __init__(self, port=12345, name=None):
@@ -33,7 +36,7 @@ class Chat:
             
             print(f"Listening on {self.get_local_ip()}:{self.port}")
             print(f"Your name: {self.name}")
-            print("=" * 40)
+            print("-" * 40)
             
             while self.running:
                 try:
@@ -107,7 +110,7 @@ class Chat:
     def handle_input(self):
         """Handle user input."""
         print("Chat ready! Commands: connect <ip>, peers, quit")
-        print("=" * 40)
+        print("-" * 40)
         
         while self.running:
             try:
@@ -148,8 +151,8 @@ class Chat:
 
 
 def main():
-    ascii_banner = pyfiglet.figlet_format("COMM-LINE")
-    print(ascii_banner)
+    ascii_banner = pyfiglet.figlet_format("$ COMM-LINE", font="slant")
+    print(Fore.GREEN + ascii_banner)
     parser = argparse.ArgumentParser(description='Chat')
     parser.add_argument('--port', type=int, default=12345, help='Port (default: 12345)')
     parser.add_argument('--name', type=str, help='Your name')
