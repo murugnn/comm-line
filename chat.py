@@ -3,7 +3,7 @@ import threading
 import argparse
 import sys
 import time
-
+import pyfiglet
 
 class Chat:
     def __init__(self, port=12345, name=None):
@@ -148,7 +148,9 @@ class Chat:
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Simple P2P Chat')
+    ascii_banner = pyfiglet.figlet_format("COMM-LINE")
+    print(ascii_banner)
+    parser = argparse.ArgumentParser(description='Chat')
     parser.add_argument('--port', type=int, default=12345, help='Port (default: 12345)')
     parser.add_argument('--name', type=str, help='Your name')
     parser.add_argument('--peer', type=str, help='Connect to peer IP')
