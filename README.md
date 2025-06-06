@@ -30,19 +30,19 @@ pip install -r requirements.txt
 
 ## USAGE
 
-# Start the chat server
+### Start the chat server
 
 ```bash
     python chat.py --name YourName
 ```
 
-# Connect to peer (Found after entering the program above)
+### Connect to peer (Found after entering the program above)
 
 ```bash
     connect <ip>
 ```
 
-# Also Autoconnect via 
+### Also Autoconnect via 
 
 ```bash 
     python chat.py --name Name --peer <ip>
